@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse vehicles, check rental dates, and book your next trip.">
+  <title>RideReady | Vehicle Rentals</title><link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-icon">R</span> RideReady</a>
+<nav><a href="#fleet">Our fleet</a><a href="#booking">Book a ride</a><a href="#records">Bookings</a><a href="#admin">Admin</a></nav></header>
+<main>
+<section class="hero"><div class="hero-copy"><p class="eyebrow">YOUR JOURNEY, YOUR WAY</p><h1>Find the right ride<br><span>for every road.</span></h1><p class="hero-text">Simple, reliable vehicle rentals for your next city drive or weekend escape.</p><a class="button button-light" href="#fleet">Explore vehicles <span>↗</span></a></div><div class="hero-art"><div class="hero-orbit"></div><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=85" alt="Modern car on the road"></div>
+<div class="hero-stat"><strong>Easy booking</strong><span>Choose dates. Pick your ride. Go.</span></div></section>
+<section class="search-panel"><div><label for="search-pickup">Pickup date</label><input type="date" id="search-pickup"></div><div><label for="search-return">Return date</label><input type="date" id="search-return"></div><button class="button" id="search-btn">Check availability ↗</button><button class="text-button" id="reset-search">Show all vehicles</button></section>
+<section class="section" id="fleet"><div class="section-heading"><div><p class="eyebrow">READY WHEN YOU ARE</p><h2>Choose your vehicle</h2><p class="muted">Find a ride that fits your plans and budget.</p></div><span class="count" id="vehicle-count">Loading vehicles…</span></div><div class="vehicle-grid" id="vehicle-grid"></div></section>
+<section class="booking-section" id="booking"><div><p class="eyebrow">RESERVE IN MINUTES</p><h2>Your next trip<br>starts here.</h2><p class="muted">Fill out the form to reserve your chosen vehicle. Rental charges are calculated automatically.</p><div class="mini-note">🔒 Demo project — do not enter sensitive personal information.</div></div>
+<form id="booking-form" class="form-card"><h3>Booking details</h3><label for="customer-name">Full name</label><input id="customer-name" name="customer_name" required maxlength="100" placeholder="Your name">
+<label for="customer-email">Email address</label><input id="customer-email" name="customer_email" type="email" required maxlength="150" placeholder="you@example.com">
+<label for="vehicle-select">Select vehicle</label><select id="vehicle-select" name="vehicle_id" required><option value="">Choose a vehicle</option></select>
+<div class="date-row"><div><label for="pickup-date">Pickup</label><input id="pickup-date" name="pickup_date" type="date" required></div><div><label for="return-date">Return</label><input id="return-date" name="return_date" type="date" required></div></div>
+<div class="estimate"><span>Estimated total</span><strong id="estimate">₹0</strong></div><button class="button button-wide" type="submit">Confirm booking ↗</button><p id="booking-message" class="form-message" role="status"></p></form></section>
+<section class="section records-section" id="records"><div class="section-heading"><div><p class="eyebrow">YOUR RESERVATION OVERVIEW</p><h2>Recent bookings</h2></div><button class="button button-outline" id="refresh-bookings">Refresh records ↻</button></div><div class="table-wrap"><table><thead><tr><th>Booking</th><th>Customer</th><th>Vehicle</th><th>Rental dates</th><th>Total</th><th>Status</th><th>Action</th></tr></thead><tbody id="booking-table"><tr><td colspan="7">Loading bookings…</td></tr></tbody></table></div></section>
+<section class="section admin-section" id="admin"><div class="section-heading"><div><p class="eyebrow">FLEET MANAGEMENT</p><h2>Add a vehicle</h2><p class="muted">Admin demo form. Additions are stored in MySQL.</p></div></div>
+<form id="vehicle-form" class="admin-form"><input name="name" placeholder="Vehicle name" required maxlength="100"><select name="category" required><option value="">Category</option><option>Hatchback</option><option>Sedan</option><option>SUV</option><option>Bike</option><option>Van</option></select><input name="registration_no" placeholder="Registration no." required maxlength="30"><input name="price_per_day" type="number" min="1" step="0.01" placeholder="Price/day (₹)" required><input name="image_url" type="url" placeholder="Image URL (optional)"><input name="description" placeholder="Short description (optional)"><button class="button" type="submit">Add vehicle +</button></form><p id="vehicle-message" class="form-message" role="status"></p></section>
+</main><footer><a class="brand" href="#"><span class="brand-icon">R</span> RideReady</a><span>Vehicle Rental Booking System · Student project</span><a href="https://github.com/" target="_blank" rel="noreferrer">Built for GitHub ↗</a></footer>
+<script src="/js/app.js"></script></body></html>
